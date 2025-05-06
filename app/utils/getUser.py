@@ -4,11 +4,15 @@ from sqlalchemy.orm import Session
 from app.models.user import User  # modelo do usuário
 from app.database import get_db
 from jose import jwt, JWTError
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
 
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="token")
 
-SECRET_KEY = "amaral"
-ALGORITHM = "HS256"
+SECRET_KEY = os.getenv('SECRET_KEY')
+ALGORITHM = os.getenv('ALGORITHM')
 
 def get_current_user(token: str = Depends(oauth2_scheme), db: Session = Depends(get_db)) -> User:
     try:
