@@ -1,2 +1,5 @@
 .env
 __pycache__
+create_tables.py
+delete_data_from_db.py
+venv

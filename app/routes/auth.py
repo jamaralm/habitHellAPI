@@ -10,7 +10,7 @@ from datetime import datetime, timedelta
 router = APIRouter()
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 
-SECRET_KEY = "secret-key-exemplo"  # troque por algo mais seguro em produção
+SECRET_KEY = "amaral"  # trocar por algo mais seguro em produção
 ALGORITHM = "HS256"
 ACCESS_TOKEN_EXPIRE_MINUTES = 60
 
